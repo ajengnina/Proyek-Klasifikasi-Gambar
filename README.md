@@ -4,49 +4,37 @@ Proyek ini membangun model klasifikasi gambar menggunakan dataset [Food-101](htt
 
 ---
 
-## 📁 Struktur Folder
-submission/
-├───tfjs_model/ # Format TensorFlow.js
-│ ├───group1-shard1of1.bin
-│ └───model.json
-├───tflite/ # Format TensorFlow Lite
-│ ├───model.tflite
-│ └───label.txt
-├───saved_model/ # Format TensorFlow SavedModel
-│ ├───saved_model.pb
-│ └───variables/
-├───notebook.ipynb # Notebook utama pelatihan & konversi model
-├───README.md # Deskripsi proyek dan panduan
-└───requirements.txt # Daftar dependensi Python
-
-
----
-
 ## 📌 Deskripsi Proyek
 
-- **Model:** Klasifikasi gambar menggunakan Convolutional Neural Networks (CNN) dengan TensorFlow/Keras.
-- **Dataset:** 5 kelas makanan yang dipilih dari Food-101.
-- **Pra-pemrosesan:** Resize gambar, normalisasi, dan augmentasi.
-- **Evaluasi:** Model dilatih selama 20 epoch dengan akurasi validasi sekitar 68%.
-- **Output:** Format model yang dikonversi untuk berbagai kebutuhan deployment.
+- **Model:** Convolutional Neural Network (CNN) menggunakan TensorFlow/Keras.
+- **Dataset:** Subset dari Food-101 yang mencakup 5 kelas makanan.
+- **Pra-pemrosesan:** Resize gambar, normalisasi piksel, dan augmentasi data.
+- **Pelatihan:** Model dilatih selama 20 epoch.
+- **Evaluasi:** Mencapai akurasi validasi sekitar **68%**.
+- **Output:** Model dikonversi ke tiga format deployment berbeda.
 
 ---
 
-## 🔁 Format Model yang Dihasilkan
+## 🔁 Format Model
 
-- `TFLite`: Untuk deployment di perangkat mobile atau embedded system.
-- `TensorFlow.js`: Untuk digunakan di browser web.
-- `SavedModel`: Format standar TensorFlow untuk produksi atau fine-tuning lanjutan.
+| Format           | Keterangan                                                  |
+|------------------|-------------------------------------------------------------|
+| `SavedModel`     | Format default TensorFlow untuk produksi dan fine-tuning.   |
+| `TensorFlow Lite`| Format ringan untuk deployment di mobile & embedded system. |
+| `TensorFlow.js`  | Format untuk integrasi di aplikasi web berbasis JavaScript. |
 
 ---
 
 ## 🧪 Cara Menjalankan
 
-1. Clone repositori ini atau buka file `notebook.ipynb` menggunakan Jupyter Notebook.
-2. Instal seluruh dependensi:  
-pip install -r requirements.txt
-
-3. Jalankan seluruh sel dalam notebook untuk melatih dan mengonversi model.
+1. Clone repositori ini atau buka file `.ipynb` di Jupyter Notebook.
+2. Instal dependensi:
+   ```bash
+   pip install -r requirements.txt
+3. Jalankan seluruh sel pada notebook untuk:
+    - Melatih model CNN
+    - Mengevaluasi performa model
+    - Mengonversi model ke format TFLite, TF.js, dan SavedModel
 
 ---
 
